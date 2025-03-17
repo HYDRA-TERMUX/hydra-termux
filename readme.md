@@ -2,7 +2,7 @@
 <h3 align="center">🚀 Noob Exploring Termux, Linux & Ethical Hacking!</h3>
 
 <p align="center">
-  <img src="https://visitor-badge.glitch.me/badge?page_id=HYDRA-TERMUX" alt="Visitor Count" />
+  <img src="https://profile-counter.glitch.me/HYDRA-TERMUX/count.svg" />
 </p>
 
 ---
