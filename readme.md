@@ -58,7 +58,7 @@
 - 🔥 **[Top 5 Hacking Tools for Termux](https://YouTube.com/watch?v=video2)**  
 - 🛠️ **[Linux Basics for Hackers](https://YouTube.com/watch?v=video3)**  
 
-💡 **Subscribe for more:** [YouTube.com/hydratermux](https://YouTube.com/hydratermux)
+💡 **Subscribe for more:** [YouTube.com/@hydratermux](https://youtube.com/@hydratermux?si=7cX3XJFoI-n-7Qnj)
 
 ---
 
@@ -81,7 +81,7 @@
   <a href="https://hydratermux.blogspot.com">
     <img src="https://img.shields.io/badge/Blogger-HYDRA--TERMUX-FF5722?style=for-the-badge&logo=blogger&logoColor=white" />
   </a>
-  <a href="https://YouTube.com/hydratermux">
+  <a href="https://youtube.com/@hydratermux?si=7cX3XJFoI-n-7Qnj">
     <img src="https://img.shields.io/badge/YouTube-HYDRA--TERMUX-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
   </a>
 </p>
