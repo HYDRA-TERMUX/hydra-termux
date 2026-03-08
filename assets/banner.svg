@@ -1,291 +1,321 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="100%">
   <defs>
     <style>
       .mono { font-family: 'Courier New', 'Lucida Console', monospace; }
-      .g1 { fill: #00ff41; }
-      .g2 { fill: #00cc33; }
-      .g3 { fill: #009922; }
-      .dim { fill: #005511; }
-      .red { fill: #ff3333; }
-      .yel { fill: #ffcc00; }
-      .wht { fill: #ccffcc; }
-      .blu { fill: #44aaff; }
+      .g1   { fill: #00ff41; }
+      .g2   { fill: #00cc33; }
+      .g3   { fill: #008822; }
+      .dim  { fill: #004d11; }
+      .red  { fill: #ff4444; }
+      .yel  { fill: #ffcc00; }
+      .wht  { fill: #bbffbb; }
+      .blu  { fill: #55aaff; }
 
-      /* line-by-line appear */
-      .l01{animation:appear .1s  0.10s both}
-      .l02{animation:appear .1s  0.35s both}
-      .l03{animation:appear .1s  0.55s both}
-      .l04{animation:appear .1s  0.80s both}
-      .l05{animation:appear .1s  1.05s both}
-      .l06{animation:appear .1s  1.30s both}
-      .l07{animation:appear .1s  1.55s both}
-      .l08{animation:appear .1s  1.80s both}
-      .l09{animation:appear .1s  2.10s both}
-      .l10{animation:appear .1s  2.35s both}
-      .l11{animation:appear .1s  2.60s both}
-      .l12{animation:appear .1s  2.90s both}
-      .l13{animation:appear .1s  3.15s both}
-      .l14{animation:appear .1s  3.45s both}
-      .l15{animation:appear .1s  3.75s both}
-      .l16{animation:appear .1s  4.00s both}
-      .l17{animation:appear .1s  4.30s both}
-      .l18{animation:appear .1s  4.55s both}
-      .l19{animation:appear .1s  4.80s both}
-      .l20{animation:appear .1s  5.10s both}
+      /* Sequential line-by-line reveal */
+      .r01{animation:pop .08s 0.10s both}
+      .r02{animation:pop .08s 0.30s both}
+      .r03{animation:pop .08s 0.55s both}
+      .r04{animation:pop .08s 0.80s both}
+      .r05{animation:pop .08s 1.00s both}
+      .r06{animation:pop .08s 1.25s both}
+      .r07{animation:pop .08s 1.50s both}
+      .r08{animation:pop .08s 1.75s both}
+      .r09{animation:pop .08s 2.00s both}
+      .r10{animation:pop .08s 2.25s both}
+      .r11{animation:pop .08s 2.50s both}
+      .r12{animation:pop .08s 2.75s both}
+      .r13{animation:pop .08s 3.00s both}
+      .r14{animation:pop .08s 3.25s both}
+      .r15{animation:pop .08s 3.50s both}
+      .r16{animation:pop .08s 3.75s both}
+      .r17{animation:pop .08s 4.00s both}
+      .r18{animation:pop .08s 4.25s both}
+      .r19{animation:pop .08s 4.50s both}
+      .r20{animation:pop .08s 4.75s both}
+      .r21{animation:pop .08s 5.00s both}
+      .r22{animation:pop .08s 5.25s both}
+      .r23{animation:pop .08s 5.50s both}
+      .r24{animation:pop .08s 5.75s both}
 
-      @keyframes appear {
-        from { opacity:0; }
-        to   { opacity:1; }
+      @keyframes pop {
+        from { opacity: 0; }
+        to   { opacity: 1; }
       }
 
-      .blink {
-        animation: blink 1s step-end infinite;
+      .cursor {
         fill: #00ff41;
+        animation: blink 1s step-end infinite;
       }
       @keyframes blink {
-        0%,100%{ opacity:1; }
-        50%    { opacity:0; }
+        0%,100%{ opacity:1; } 50%{ opacity:0; }
       }
 
-      .glow-title {
-        animation: glow 2.5s ease-in-out infinite alternate;
+      .title-pulse {
+        animation: pulse 2.8s ease-in-out infinite alternate;
       }
-      @keyframes glow {
-        from { filter: drop-shadow(0 0 3px #00ff41); }
-        to   { filter: drop-shadow(0 0 18px #00ff41) drop-shadow(0 0 40px #00aa20); }
-      }
-
-      /* progress bar fill left→right */
-      .bar1 { animation: bar1 1.2s 2.0s ease-out both; transform-origin:left center; }
-      .bar2 { animation: bar1 1.2s 2.3s ease-out both; transform-origin:left center; }
-      .bar3 { animation: bar1 1.2s 2.6s ease-out both; transform-origin:left center; }
-      .bar4 { animation: bar1 1.2s 2.9s ease-out both; transform-origin:left center; }
-      .bar5 { animation: bar1 1.2s 3.2s ease-out both; transform-origin:left center; }
-      @keyframes bar1 {
-        from { transform:scaleX(0); }
-        to   { transform:scaleX(1); }
+      @keyframes pulse {
+        from { filter: drop-shadow(0 0 4px #00ff41) drop-shadow(0 0 8px #00aa20); }
+        to   { filter: drop-shadow(0 0 16px #00ff41) drop-shadow(0 0 32px #00cc30) drop-shadow(0 0 60px #007010); }
       }
 
-      /* CRT scanline flicker */
-      .scanlines {
-        animation: flicker 8s linear infinite;
+      /* bar animations */
+      .b1{animation:fillbar 1.4s 1.5s ease-out both; transform-origin:556px center;}
+      .b2{animation:fillbar 1.4s 1.8s ease-out both; transform-origin:556px center;}
+      .b3{animation:fillbar 1.4s 2.1s ease-out both; transform-origin:556px center;}
+      .b4{animation:fillbar 1.4s 2.4s ease-out both; transform-origin:556px center;}
+      .b5{animation:fillbar 1.4s 2.7s ease-out both; transform-origin:556px center;}
+      @keyframes fillbar {
+        from{ transform:scaleX(0); }
+        to  { transform:scaleX(1); }
       }
-      @keyframes flicker {
-        0%,100%{ opacity:0.07; }
-        92%    { opacity:0.07; }
-        93%    { opacity:0.13; }
-        94%    { opacity:0.07; }
-        96%    { opacity:0.10; }
-        97%    { opacity:0.07; }
+
+      /* CRT flicker */
+      .crt { animation: crt 12s linear infinite; }
+      @keyframes crt {
+        0%,89%,100%{ opacity:.055; }
+        90%        { opacity:.14;  }
+        91%        { opacity:.055; }
+        95%        { opacity:.10;  }
+        96%        { opacity:.055; }
       }
     </style>
 
-    <!-- dark green gradient background -->
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#010e01"/>
-      <stop offset="100%" stop-color="#000600"/>
+      <stop offset="0%"   stop-color="#010d01"/>
+      <stop offset="100%" stop-color="#000500"/>
     </linearGradient>
-
-    <!-- scanline pattern -->
-    <pattern id="scan" x="0" y="0" width="1" height="3" patternUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="900" height="1" fill="#00ff41" opacity="0.4"/>
+    <pattern id="lines" x="0" y="0" width="2" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="860" height="1" fill="#00ff41" opacity="1"/>
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="320" fill="url(#bg)"/>
-
+  <!-- BG -->
+  <rect width="860" height="420" fill="url(#bg)"/>
   <!-- CRT scanlines -->
-  <rect width="900" height="320" fill="url(#scan)" class="scanlines"/>
-
-  <!-- outer border glow -->
-  <rect x="1" y="1" width="898" height="318" rx="4" fill="none" stroke="#00ff41" stroke-width="1.2" opacity="0.8"/>
-  <rect x="3" y="3" width="894" height="314" rx="3" fill="none" stroke="#003300" stroke-width="0.5"/>
+  <rect width="860" height="420" fill="url(#lines)" class="crt"/>
+  <!-- border -->
+  <rect x="1" y="1" width="858" height="418" rx="5" fill="none" stroke="#00ff41" stroke-width="1.2" opacity="0.9"/>
+  <rect x="3" y="3" width="854" height="414" rx="4" fill="none" stroke="#002a00" stroke-width="0.6"/>
 
   <!-- title bar -->
-  <rect x="1" y="1" width="898" height="24" rx="4" fill="#030f03"/>
-  <rect x="1" y="20" width="898" height="5" fill="#030f03"/>
-  <!-- window buttons -->
-  <circle cx="18" cy="13" r="5.5" fill="#ff5f57"/>
-  <circle cx="35" cy="13" r="5.5" fill="#febc2e"/>
-  <circle cx="52" cy="13" r="5.5" fill="#28c840"/>
-  <text x="450" y="17" text-anchor="middle" class="mono dim" font-size="10">root@HYDRA-TERMUX: ~ — bash — 196×48</text>
+  <rect x="1"  y="1"  width="858" height="26" rx="5" fill="#020e02"/>
+  <rect x="1"  y="22" width="858" height="5"  fill="#020e02"/>
+  <circle cx="20" cy="14" r="6" fill="#ff5f57"/>
+  <circle cx="38" cy="14" r="6" fill="#febc2e"/>
+  <circle cx="56" cy="14" r="6" fill="#28c840"/>
+  <text x="430" y="18" text-anchor="middle" class="mono dim" font-size="11">root@HYDRA-TERMUX  —  bash  —  860×420</text>
 
-  <!-- ═══════════ LEFT PANEL: Live terminal session ═══════════ -->
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LEFT PANEL  (x: 16 → 430)  terminal log   -->
+  <!-- ══════════════════════════════════════════ -->
 
-  <!-- prompt block -->
-  <g class="l01">
-    <text x="18" y="46" class="mono dim" font-size="12">┌──(</text>
-    <text x="50" y="46" class="mono g1" font-size="12" font-weight="bold">root</text>
-    <text x="76" y="46" class="mono g3" font-size="12">㉿</text>
-    <text x="90" y="46" class="mono g2" font-size="12" font-weight="bold">HYDRA-TERMUX</text>
-    <text x="196" y="46" class="mono dim" font-size="12">)-[</text>
-    <text x="216" y="46" class="mono g1" font-size="12">~</text>
-    <text x="224" y="46" class="mono dim" font-size="12">]</text>
+  <!-- prompt 1 -->
+  <g class="r01">
+    <text x="16" y="52"  class="mono dim" font-size="12.5">┌──(</text>
+    <text x="52" y="52"  class="mono g1"  font-size="12.5" font-weight="bold">root</text>
+    <text x="80" y="52"  class="mono g3"  font-size="12.5">㉿</text>
+    <text x="95" y="52"  class="mono g2"  font-size="12.5" font-weight="bold">HYDRA-TERMUX</text>
+    <text x="208" y="52" class="mono dim" font-size="12.5">)-[~]</text>
   </g>
-  <g class="l02">
-    <text x="18" y="62" class="mono dim" font-size="12">└─</text>
-    <text x="36" y="62" class="mono g2" font-size="12">#</text>
-    <text x="46" y="62" class="mono yel" font-size="12">nmap</text>
-    <text x="84" y="62" class="mono wht" font-size="12">-sV -sC -O --script=vuln 192.168.1.0/24</text>
+  <g class="r02">
+    <text x="16" y="68"  class="mono dim" font-size="12.5">└─</text>
+    <text x="35" y="68"  class="mono g2"  font-size="12.5">#</text>
+    <text x="46" y="68"  class="mono yel" font-size="12.5">nmap</text>
+    <text x="86" y="68"  class="mono wht" font-size="12.5"> -sV -sC --script vuln 192.168.1.0/24</text>
   </g>
-  <g class="l03">
-    <text x="18" y="78" class="mono g3" font-size="12">Starting Nmap 7.94 ( https://nmap.org ) at 2025-03-08</text>
+  <g class="r03">
+    <text x="16" y="84"  class="mono g3"  font-size="11.5">Starting Nmap 7.94  ( https://nmap.org )</text>
   </g>
-  <g class="l04">
-    <text x="18" y="94" class="mono g3" font-size="12">Nmap scan report for 192.168.1.105</text>
+  <g class="r04">
+    <text x="16" y="99"  class="mono g3"  font-size="11.5">Nmap scan report for 192.168.1.105</text>
   </g>
-  <g class="l05">
-    <text x="18" y="110" class="mono g2" font-size="12">PORT     STATE   SERVICE     VERSION</text>
+  <g class="r05">
+    <text x="16" y="114" class="mono g2"  font-size="11.5">PORT      STATE  SERVICE     VERSION</text>
   </g>
-  <g class="l06">
-    <text x="18" y="126" class="mono g1" font-size="12">22/tcp   open    ssh         OpenSSH 8.9</text>
-    <text x="290" y="126" class="mono red" font-size="12">  [VULN: CVE-2023-38408]</text>
+  <g class="r06">
+    <text x="16" y="129" class="mono g1"  font-size="11.5">22/tcp    open   ssh         OpenSSH 8.9p1</text>
   </g>
-  <g class="l07">
-    <text x="18" y="142" class="mono g1" font-size="12">80/tcp   open    http        Apache 2.4.54</text>
-    <text x="290" y="142" class="mono red" font-size="12">  [VULN: CVE-2022-31813]</text>
+  <g class="r07">
+    <text x="16" y="143" class="mono red" font-size="11">  |_ CVE-2023-38408  VULNERABLE  CVSS:9.8</text>
   </g>
-  <g class="l08">
-    <text x="18" y="158" class="mono g1" font-size="12">3306/tcp open    mysql       MySQL 8.0.31</text>
-    <text x="290" y="158" class="mono yel" font-size="12">  [INFO: Auth bypass]</text>
+  <g class="r08">
+    <text x="16" y="157" class="mono g1"  font-size="11.5">80/tcp    open   http        Apache httpd 2.4.54</text>
   </g>
-
-  <!-- second prompt -->
-  <g class="l09">
-    <text x="18" y="178" class="mono dim" font-size="12">┌──(</text>
-    <text x="50" y="178" class="mono g1" font-size="12" font-weight="bold">root</text>
-    <text x="76" y="178" class="mono g3" font-size="12">㉿</text>
-    <text x="90" y="178" class="mono g2" font-size="12" font-weight="bold">HYDRA-TERMUX</text>
-    <text x="196" y="178" class="mono dim" font-size="12">)-[</text>
-    <text x="216" y="178" class="mono g1" font-size="12">~</text>
-    <text x="224" y="178" class="mono dim" font-size="12">]</text>
+  <g class="r09">
+    <text x="16" y="171" class="mono red" font-size="11">  |_ CVE-2022-31813  VULNERABLE  CVSS:9.1</text>
   </g>
-  <g class="l10">
-    <text x="18" y="194" class="mono dim" font-size="12">└─</text>
-    <text x="36" y="194" class="mono g2" font-size="12">#</text>
-    <text x="46" y="194" class="mono yel" font-size="12">hydra</text>
-    <text x="90" y="194" class="mono wht" font-size="12">-l root -P /wordlists/rockyou.txt ssh://192.168.1.105</text>
+  <g class="r10">
+    <text x="16" y="185" class="mono g1"  font-size="11.5">3306/tcp  open   mysql       MySQL 8.0.31</text>
   </g>
-  <g class="l11">
-    <text x="18" y="210" class="mono g3" font-size="12">[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 passwords</text>
-  </g>
-  <g class="l12">
-    <text x="18" y="226" class="mono g3" font-size="12">[DATA] attacking ssh://192.168.1.105:22/</text>
-  </g>
-  <g class="l13">
-    <text x="18" y="242" class="mono g2" font-size="12">[STATUS] 256.00 tries/min, 256 tries in 00:01h</text>
-  </g>
-  <g class="l14">
-    <text x="18" y="258" class="mono red" font-size="12" font-weight="bold">[22][ssh] host: 192.168.1.105   login: root   password: t3rmux_g0d</text>
-  </g>
-  <g class="l15">
-    <text x="18" y="274" class="mono g1" font-size="12" font-weight="bold">1 of 1 target successfully completed, 1 valid password found</text>
+  <g class="r11">
+    <text x="16" y="199" class="mono yel" font-size="11">  |_ AUTH BYPASS possible — anonymous login</text>
   </g>
 
-  <!-- third prompt -->
-  <g class="l16">
-    <text x="18" y="294" class="mono dim" font-size="12">┌──(</text>
-    <text x="50" y="294" class="mono g1" font-size="12" font-weight="bold">root</text>
-    <text x="76" y="294" class="mono g3" font-size="12">㉿</text>
-    <text x="90" y="294" class="mono g2" font-size="12" font-weight="bold">HYDRA-TERMUX</text>
-    <text x="196" y="294" class="mono dim" font-size="12">)-[</text>
-    <text x="216" y="294" class="mono g1" font-size="12">~</text>
-    <text x="224" y="294" class="mono dim" font-size="12">]</text>
+  <!-- prompt 2 -->
+  <g class="r12">
+    <text x="16" y="217" class="mono dim" font-size="12.5">┌──(</text>
+    <text x="52" y="217" class="mono g1"  font-size="12.5" font-weight="bold">root</text>
+    <text x="80" y="217" class="mono g3"  font-size="12.5">㉿</text>
+    <text x="95" y="217" class="mono g2"  font-size="12.5" font-weight="bold">HYDRA-TERMUX</text>
+    <text x="208" y="217" class="mono dim" font-size="12.5">)-[~]</text>
   </g>
-  <g class="l17">
-    <text x="18" y="310" class="mono dim" font-size="12">└─</text>
-    <text x="36" y="310" class="mono g2" font-size="12">#</text>
-    <rect x="46" y="299" width="9" height="13" class="blink"/>
+  <g class="r13">
+    <text x="16" y="233" class="mono dim" font-size="12.5">└─</text>
+    <text x="35" y="233" class="mono g2"  font-size="12.5">#</text>
+    <text x="46" y="233" class="mono yel" font-size="12.5">hydra</text>
+    <text x="92" y="233" class="mono wht" font-size="12.5"> -l root -P rockyou.txt ssh://192.168.1.105</text>
   </g>
-
-  <!-- ═══ VERTICAL DIVIDER ═══ -->
-  <line x1="460" y1="28" x2="460" y2="315" stroke="#002200" stroke-width="1.5" stroke-dasharray="4,3"/>
-
-  <!-- ═══════════ RIGHT PANEL: Operator card ═══════════ -->
-
-  <!-- Big title -->
-  <g class="glow-title">
-    <text x="480" y="60" class="mono g1" font-size="28" font-weight="bold" letter-spacing="2">HYDRA-TERMUX</text>
+  <g class="r14">
+    <text x="16" y="249" class="mono g3"  font-size="11.5">[DATA] max 16 tasks / 14,344,399 passwords to try</text>
   </g>
-  <text x="480" y="76" class="mono g3" font-size="11">Rixon Xavier  ·  India  ·  UTC+05:30</text>
-
-  <line x1="480" y1="83" x2="890" y2="83" stroke="#002800" stroke-width="1"/>
-
-  <!-- identity fields -->
-  <g class="l03">
-    <text x="480" y="100" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="100" class="mono g3" font-size="12">ROLE    </text>
-    <text x="590" y="100" class="mono g1" font-size="12">Termux Explorer &amp; Ethical Hacker</text>
+  <g class="r15">
+    <text x="16" y="264" class="mono g3"  font-size="11.5">[STATUS] 312.00 tries/min — estimated 45 min</text>
   </g>
-  <g class="l04">
-    <text x="480" y="116" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="116" class="mono g3" font-size="12">FOCUS   </text>
-    <text x="590" y="116" class="mono g1" font-size="12">Recon · Exploit · Learn · Repeat</text>
+  <g class="r16">
+    <text x="16" y="279" class="mono red" font-size="12" font-weight="bold">[22][ssh] login: root   pass: t3rmux_g0d  ✓</text>
   </g>
-  <g class="l05">
-    <text x="480" y="132" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="132" class="mono g3" font-size="12">LEVEL   </text>
-    <text x="590" y="132" class="mono yel" font-size="12">ASCENDING  [Noob → Pro]</text>
-  </g>
-  <g class="l06">
-    <text x="480" y="148" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="148" class="mono g3" font-size="12">TOOLS   </text>
-    <text x="590" y="148" class="mono g1" font-size="12">Nmap · Hydra · MSF · Burp · SQLmap</text>
-  </g>
-  <g class="l07">
-    <text x="480" y="164" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="164" class="mono g3" font-size="12">BLOG    </text>
-    <text x="590" y="164" class="mono blu" font-size="12">hydratermux.blogspot.com</text>
-  </g>
-  <g class="l08">
-    <text x="480" y="180" class="mono dim" font-size="12">[OP]</text>
-    <text x="516" y="180" class="mono g3" font-size="12">YT      </text>
-    <text x="590" y="180" class="mono red" font-size="12">youtube.com/@HYDRATERMUX</text>
+  <g class="r17">
+    <text x="16" y="294" class="mono g1"  font-size="11.5">1 of 1 target completed — 1 valid password found</text>
   </g>
 
-  <line x1="480" y1="188" x2="890" y2="188" stroke="#002800" stroke-width="1"/>
+  <!-- prompt 3 -->
+  <g class="r18">
+    <text x="16" y="312" class="mono dim" font-size="12.5">┌──(</text>
+    <text x="52" y="312" class="mono g1"  font-size="12.5" font-weight="bold">root</text>
+    <text x="80" y="312" class="mono g3"  font-size="12.5">㉿</text>
+    <text x="95" y="312" class="mono g2"  font-size="12.5" font-weight="bold">HYDRA-TERMUX</text>
+    <text x="208" y="312" class="mono dim" font-size="12.5">)-[~]</text>
+  </g>
+  <g class="r19">
+    <text x="16" y="328" class="mono dim" font-size="12.5">└─</text>
+    <text x="35" y="328" class="mono g2"  font-size="12.5">#</text>
+    <text x="46" y="328" class="mono yel" font-size="12.5">msfconsole</text>
+    <text x="124" y="328" class="mono wht" font-size="12.5"> -q -x "use multi/handler"</text>
+  </g>
+  <g class="r20">
+    <text x="16" y="344" class="mono g3"  font-size="11.5">msf6 exploit(multi/handler) &gt; set LHOST 0.0.0.0</text>
+  </g>
+  <g class="r21">
+    <text x="16" y="359" class="mono g3"  font-size="11.5">msf6 exploit(multi/handler) &gt; run</text>
+  </g>
+  <g class="r22">
+    <text x="16" y="374" class="mono g1"  font-size="11.5">[*] Started reverse TCP handler on 0.0.0.0:4444</text>
+  </g>
+  <g class="r23">
+    <text x="16" y="389" class="mono red" font-size="12" font-weight="bold">[*] Meterpreter session 1 opened  192.168.1.105→attacker  ✓</text>
+  </g>
+  <g class="r24">
+    <text x="16" y="407" class="mono g2"  font-size="12.5">meterpreter &gt;</text>
+    <rect x="136" y="395" width="9" height="14" class="cursor"/>
+  </g>
 
-  <!-- Skill bars -->
-  <text x="480" y="204" class="mono g3" font-size="11">SKILL PROFICIENCY</text>
+  <!-- DIVIDER -->
+  <line x1="445" y1="30" x2="445" y2="412" stroke="#002200" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- RIGHT PANEL  (x: 460 → 845)  identity     -->
+  <!-- ══════════════════════════════════════════ -->
+
+  <g class="title-pulse">
+    <text x="460" y="65" class="mono g1" font-size="30" font-weight="bold" letter-spacing="1.5">HYDRA-TERMUX</text>
+  </g>
+  <text x="460" y="81" class="mono g3" font-size="11.5">Rixon Xavier  ·  India  ·  UTC +05:30</text>
+
+  <line x1="460" y1="89" x2="846" y2="89" stroke="#002800" stroke-width="1"/>
+
+  <g class="r03">
+    <text x="460" y="106" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="106" class="mono g3"  font-size="12"> ROLE    </text>
+    <text x="564" y="106" class="mono g1"  font-size="12">Termux Explorer</text>
+  </g>
+  <g class="r04">
+    <text x="460" y="122" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="122" class="mono g3"  font-size="12"> FOCUS   </text>
+    <text x="564" y="122" class="mono g1"  font-size="12">Ethical Hacking</text>
+  </g>
+  <g class="r05">
+    <text x="460" y="138" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="138" class="mono g3"  font-size="12"> LEVEL   </text>
+    <text x="564" y="138" class="mono yel" font-size="12">Noob → Pro  ⬆</text>
+  </g>
+  <g class="r06">
+    <text x="460" y="154" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="154" class="mono g3"  font-size="12"> STACK   </text>
+    <text x="564" y="154" class="mono g1"  font-size="12">Python · Bash · Linux</text>
+  </g>
+  <g class="r07">
+    <text x="460" y="170" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="170" class="mono g3"  font-size="12"> TOOLS   </text>
+    <text x="564" y="170" class="mono g1"  font-size="12">Nmap·Hydra·MSF·Burp</text>
+  </g>
+  <g class="r08">
+    <text x="460" y="186" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="186" class="mono g3"  font-size="12"> BLOG    </text>
+    <text x="564" y="186" class="mono blu" font-size="12">hydratermux.blogspot.com</text>
+  </g>
+  <g class="r09">
+    <text x="460" y="202" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="202" class="mono g3"  font-size="12"> YT      </text>
+    <text x="564" y="202" class="mono red" font-size="12">youtube.com/@HYDRATERMUX</text>
+  </g>
+  <g class="r10">
+    <text x="460" y="218" class="mono dim" font-size="12">[OP]</text>
+    <text x="494" y="218" class="mono g3"  font-size="12"> TG      </text>
+    <text x="564" y="218" class="mono blu" font-size="12">t.me/hydratermux</text>
+  </g>
+
+  <line x1="460" y1="226" x2="846" y2="226" stroke="#002800" stroke-width="1"/>
+  <text x="460" y="242" class="mono g3" font-size="11">SKILL MATRIX</text>
 
   <!-- Python -->
-  <g class="l10">
-    <text x="480" y="220" class="mono g3" font-size="11">Python  </text>
-    <rect x="546" y="210" width="180" height="9" rx="2" fill="#001400" stroke="#003300" stroke-width="0.8"/>
-    <rect x="546" y="210" width="144" height="9" rx="2" fill="#00ff41" class="bar1"/>
-    <text x="734" y="219" class="mono g3" font-size="10"> 80%</text>
+  <g class="r12">
+    <text x="460" y="259" class="mono g3" font-size="11">Python   </text>
+    <rect x="528" y="250" width="200" height="10" rx="2" fill="#001200" stroke="#002800" stroke-width="0.8"/>
+    <rect x="528" y="250" width="160" height="10" rx="2" fill="#00ff41" class="b1"/>
+    <text x="735" y="259" class="mono g3" font-size="10.5"> 80%</text>
   </g>
-  <g class="l11">
-    <text x="480" y="235" class="mono g3" font-size="11">Bash    </text>
-    <rect x="546" y="225" width="180" height="9" rx="2" fill="#001400" stroke="#003300" stroke-width="0.8"/>
-    <rect x="546" y="225" width="135" height="9" rx="2" fill="#00cc33" class="bar2"/>
-    <text x="734" y="234" class="mono g3" font-size="10"> 75%</text>
+  <g class="r13">
+    <text x="460" y="276" class="mono g3" font-size="11">Bash     </text>
+    <rect x="528" y="267" width="200" height="10" rx="2" fill="#001200" stroke="#002800" stroke-width="0.8"/>
+    <rect x="528" y="267" width="150" height="10" rx="2" fill="#00cc33" class="b2"/>
+    <text x="735" y="276" class="mono g3" font-size="10.5"> 75%</text>
   </g>
-  <g class="l12">
-    <text x="480" y="250" class="mono g3" font-size="11">Linux   </text>
-    <rect x="546" y="240" width="180" height="9" rx="2" fill="#001400" stroke="#003300" stroke-width="0.8"/>
-    <rect x="546" y="240" width="126" height="9" rx="2" fill="#009922" class="bar3"/>
-    <text x="734" y="249" class="mono g3" font-size="10"> 70%</text>
+  <g class="r14">
+    <text x="460" y="293" class="mono g3" font-size="11">Linux    </text>
+    <rect x="528" y="284" width="200" height="10" rx="2" fill="#001200" stroke="#002800" stroke-width="0.8"/>
+    <rect x="528" y="284" width="140" height="10" rx="2" fill="#009922" class="b3"/>
+    <text x="735" y="293" class="mono g3" font-size="10.5"> 70%</text>
   </g>
-  <g class="l13">
-    <text x="480" y="265" class="mono g3" font-size="11">OSINT   </text>
-    <rect x="546" y="255" width="180" height="9" rx="2" fill="#001400" stroke="#003300" stroke-width="0.8"/>
-    <rect x="546" y="255" width="108" height="9" rx="2" fill="#007711" class="bar4"/>
-    <text x="734" y="264" class="mono g3" font-size="10"> 60%</text>
+  <g class="r15">
+    <text x="460" y="310" class="mono g3" font-size="11">OSINT    </text>
+    <rect x="528" y="301" width="200" height="10" rx="2" fill="#001200" stroke="#002800" stroke-width="0.8"/>
+    <rect x="528" y="301" width="120" height="10" rx="2" fill="#007711" class="b4"/>
+    <text x="735" y="310" class="mono g3" font-size="10.5"> 60%</text>
   </g>
-  <g class="l14">
-    <text x="480" y="280" class="mono g3" font-size="11">Pentesting</text>
-    <rect x="556" y="270" width="170" height="9" rx="2" fill="#001400" stroke="#003300" stroke-width="0.8"/>
-    <rect x="556" y="270" width="85"  height="9" rx="2" fill="#005511" class="bar5"/>
-    <text x="734" y="279" class="mono g3" font-size="10"> 50%</text>
+  <g class="r16">
+    <text x="460" y="327" class="mono g3" font-size="11">Pentest  </text>
+    <rect x="528" y="318" width="200" height="10" rx="2" fill="#001200" stroke="#002800" stroke-width="0.8"/>
+    <rect x="528" y="318" width="100" height="10" rx="2" fill="#005511" class="b5"/>
+    <text x="735" y="327" class="mono g3" font-size="10.5"> 50%</text>
   </g>
 
-  <line x1="480" y1="290" x2="890" y2="290" stroke="#002800" stroke-width="1"/>
+  <line x1="460" y1="337" x2="846" y2="337" stroke="#002800" stroke-width="1"/>
 
-  <g class="l16">
-    <text x="480" y="308" class="mono g3" font-size="11">tg: t.me/hydratermux</text>
-    <text x="660" y="308" class="mono dim" font-size="11"> | </text>
-    <text x="672" y="308" class="mono g3" font-size="11">YT: @HYDRATERMUX</text>
+  <!-- mini mission statement -->
+  <g class="r18">
+    <text x="460" y="354" class="mono g3" font-size="11">MISSION  :: Learn. Build. Break. Repeat.</text>
+  </g>
+  <g class="r19">
+    <text x="460" y="370" class="mono g3" font-size="11">STATUS   :: </text>
+    <text x="536" y="370" class="mono yel" font-size="11">Every expert was once a noob</text>
+  </g>
+  <g class="r20">
+    <text x="460" y="386" class="mono g3" font-size="11">MOTTO    :: </text>
+    <text x="536" y="386" class="mono g1" font-size="11">Hack the planet. Ethically. 🐍</text>
+  </g>
+
+  <line x1="460" y1="395" x2="846" y2="395" stroke="#002800" stroke-width="1"/>
+  <g class="r22">
+    <text x="460" y="410" class="mono dim" font-size="10.5">github.com/HYDRA-TERMUX  ·  ⭐ star my repos  ·  🔔 sub on YT</text>
   </g>
 </svg>
