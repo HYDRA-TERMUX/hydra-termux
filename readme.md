@@ -9,17 +9,6 @@
 
 </div>
 
----
-
-```
-╔══════════════════════════════════════════════════════════════════════════╗
-║  [BOOT] Linux HYDRA — SMP PREEMPT_DYNAMIC                              ║
-║  [INIT] Loading: nmap hydra metasploit sqlmap burp aircrack john...    ║
-║  [INIT] Mounting /dev/knowledge on /mnt/target...............  [ OK ]  ║
-║  [WARN] Firewall: DISABLED  |  Stealth mode: ON                        ║
-║  [ROOT] Shell spawned. You have 1 life. Use it wisely. 💀              ║
-╚══════════════════════════════════════════════════════════════════════════╝
-```
 
 ---
 
